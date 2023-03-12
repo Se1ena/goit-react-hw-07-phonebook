@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/contactsSlice';
-import { getContacts } from '../../redux/selectors';
+import { addContact } from '../../redux/operations';
+import { selectContacts } from '../../redux/selectors';
+import { Form, Btn, Div } from 'components/ContactForm/ContactForm.styled';
 
-import { Form, Btn } from 'components/ContactForm/ContactForm.styled';
-
-export const ContactForm = () => {
-  const contacts = useSelector(getContacts);
+const ContactForm = () => {
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   function handleSubmitForm(e) {
@@ -32,7 +31,7 @@ export const ContactForm = () => {
   return (
     <Form onSubmit={handleSubmitForm}>
       <label>
-        <div>Name</div>
+        <Div>Name</Div>
         <input
           name="name"
           type="text"
@@ -43,7 +42,7 @@ export const ContactForm = () => {
         />
       </label>
       <label>
-        <div>Number</div>
+        <Div>Number</Div>
         <input
           type="tel"
           name="number"
@@ -67,3 +66,5 @@ ContactForm.propTypes = {
     })
   )
 };
+
+export default ContactForm;

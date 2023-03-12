@@ -16,3 +16,12 @@ export const Btn = styled.button`
   cursor: pointer;
   background-color: #80808061;
 `;
+
+export const Div = styled.div`
+display: flex;
+
+font-size: 15px;
+font-weight: 500;
+
+margin: 3px;
+`

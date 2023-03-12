@@ -1,18 +1,20 @@
-import React from 'react';
-import { ContactForm } from 'components/ContactForm/ContactForm';
-import { ContactList } from 'components/ContactList/ContactList';
-import { Filter } from 'components/Filter/Filter';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchContacts } from 'redux/operations';
+import Phonebook from 'Pages/Phonebook';
 
-import { Container, Title, TitleContacts } from 'components/Container.styles';
+const App = () => {
+  const dispatch = useDispatch();
 
-export const App = () => {
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
   return (
-    <Container>
-      <Title>Phonebook</Title>
-      <ContactForm />
-      <TitleContacts>Contacts</TitleContacts>
-      <Filter />
-      <ContactList />
-    </Container>
+    <>
+      <Phonebook />
+    </>
   );
 };
+
+export default App;
