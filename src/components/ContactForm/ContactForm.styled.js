@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  gap: 30px;
   padding: 20px;
   border: 1px solid gray;
 `;
@@ -17,11 +18,13 @@ export const Btn = styled.button`
   background-color: #80808061;
 `;
 
-export const Div = styled.div`
-display: flex;
-
-font-size: 15px;
-font-weight: 500;
-
-margin: 3px;
-`
+export const Label = styled.label`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  gap: 35px;
+  font-size: 15px;
+  font-weight: 600;
+`;
