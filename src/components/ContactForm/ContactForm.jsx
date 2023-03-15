@@ -48,26 +48,6 @@ const ContactForm = () => {
     setNumber('');
   }
 
-  //function handleSubmitForm(e) {
-  //e.preventDefault();
-  //const form = e.target;
-  //const name = form.name.value;
-  //const number = form.number.value;
-
-  //if (
-  //contacts.find(
-  //contact => contact.name.toLowerCase() === name.toLowerCase()
-  //)
-  //) {
-  //alert(`"${name} already in contacts"`);
-  //form.reset();
-  //return;
-  //}
-
-  //dispatch(addContact(name, number));
-  //form.reset();
-  //}
-
   return (
     <Form onSubmit={handleFormSubmit}>
       <Label>
